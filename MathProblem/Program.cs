@@ -12,6 +12,7 @@ namespace MathProblem
     {
         static void Main(string[] args)
         {
+            //create of list of all palidroms between 111,111 and 999,999
             List<int> palindrome = new List<int>();
             for(int i= 1;i< 10; i++)
             {
@@ -28,10 +29,13 @@ namespace MathProblem
                     
                 }
             }
+           
             for(int i = 0; i< palindrome.Count(); i++)
             {
+
                 bool stop = false;
                 List<int> viableNumbers = new List<int>();
+                //for each palindrom generate a list of factors above 100 and less then 1000
                 for (int b = 1; b <= palindrome.ElementAt(i); b++)
                 {            
                     if (palindrome.ElementAt(i) % b == 0 && b > 100 && b < 1000)
@@ -41,6 +45,8 @@ namespace MathProblem
                        // Console.WriteLine(b + " is a factor of " + palindrome.ElementAt(i));
                     }
                 }
+
+                //check the viable number list for numbers that will the plaindrom when multiplyed together
                 for(int j = 0; j < viableNumbers.Count(); j++)
                 {
                     for (int k = 0; k < viableNumbers.Count(); k++)
